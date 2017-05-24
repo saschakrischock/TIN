@@ -1,0 +1,179 @@
+  //################ VARIABLES ################//
+  $width-panel-drag-handle: 6px;
+  $color-1: #1abc9c;
+  $color-2: #3498db;
+  $color-3: #f1c40f;
+  $color-4: #e74c3c;
+  //
+  //################ GENERAL STYLES ################//
+  html {
+    font-size: 14px;
+  }
+
+.ui-resizable-handle {
+  z-index: 10000;
+}
+
+.responsive-video iframe {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+  pointer-events: none;
+}
+
+.responsive-video {
+position: relative;
+padding-bottom: 56.25%; /* Default for 1600x900 videos 16:9 ratio*/
+padding-top: 0px;
+height: 0;
+overflow: hidden;
+}
+
+body {
+  overflow: hidden;
+}
+
+.nav-left {
+    width: 68%;
+  border-left: 6px solid #000;
+    position: fixed;
+    top: 0;
+    background-color: #fff;
+  
+   h2 {
+    margin-left: 2%;
+     margin-top: 20px;
+  }
+  
+  ul {
+    padding: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    border-top: 6px solid #000;
+    /* left: 2%; */
+    align-content: space-around;
+    flex-direction: row;
+    /* padding: 0; */
+    /* flex-wrap: wrap-reverse; */
+    /* margin: 0; */
+    margin: 0;
+    
+    li {
+            padding: 7px;
+    font-size: 1.5vw;
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    height: 40px;
+    line-height: 40px;
+    flex: 1;
+    border-right: 6px solid #000;
+    text-align: center;
+    list-style: none;
+      
+      a {
+        color: #000;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-weight: bold;
+      }
+      
+}
+}
+  }
+
+.panel {
+  height: 100%;
+  overflow: hidden !important;
+}
+
+
+  
+  .panel-group {
+    display: flex;
+    height: 100%;
+  }
+  
+  .panel {
+    overflow: hidden;
+    &:nth-child(1) {
+    
+      width: 68vw;
+       min-width: 200px;
+      padding-right: $width-panel-drag-handle;
+      div[class^="drag-handle"] {
+        background-color: #000;
+        //
+        &:hover {
+          background-color: #ddd;
+        }
+      }
+    }
+    &:nth-child(2) {
+      background-color: $color-2;
+      flex: 1;
+      min-width: 200px;
+    }
+    &:nth-child(3) {
+      background-color: $color-3;
+      width: 150px;
+      padding-left: $width-panel-drag-handle;
+      div[class^="drag-handle"] {
+        background-color: darken($color-3, 20);
+        &:hover {
+          background-color: darken($color-3, 30);
+        }
+      }
+    }
+    &:nth-child(4) {
+      background-color: $color-4;
+      width: 150px;
+      padding-left: $width-panel-drag-handle;
+      div[class^="drag-handle"] {
+        background-color: darken($color-4, 20);
+        &:hover {
+          background-color: darken($color-4, 30);
+        }
+      }
+    }
+  }
+  
+  %drag-handle-base {
+    min-width: $width-panel-drag-handle;
+    max-width: $width-panel-drag-handle;
+    flex-basis: $width-panel-drag-handle;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    left: 0;
+    right: 0;
+  }
+  
+  .drag-handle-e {
+    @extend %drag-handle-base;
+    left: auto;
+  }
+  
+  .drag-handle-w {
+    @extend %drag-handle-base;
+    right: auto;
+  }
+  
+  .ui-resizable-handle {}
+  
+  //
+  //################ DEMO STYLES ################//
+  .scroll-container {
+    overflow: scroll;
+    height: 96%;
+    padding: 1rem;
+        border-top: 6px solid;
+    p {
+      margin: 0 0 .5rem;
+      line-height: 1.35rem;
+      padding: 0;
+    }
+  }
+
