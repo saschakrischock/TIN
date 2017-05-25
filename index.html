@@ -1,81 +1,164 @@
 <!DOCTYPE html>
-<html >
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>A Pen by  svenson</title>
-  
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <meta charset="UTF-8">
+    <title>A Pen by svenson</title>
 
-  <link rel='stylesheet prefetch' href='https://code.jquery.com/ui/1.12.0/themes/smoothness/jquery-ui.css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
 
-      <link rel="stylesheet" href="css/style.css">
+    <link rel='stylesheet prefetch' href='https://code.jquery.com/ui/1.12.0/themes/smoothness/jquery-ui.css'>
 
-  
+    <link rel="stylesheet" href="scss/style.css">
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700" rel="stylesheet">
+
+
 </head>
 
 <body>
-  <nav class="nav-left">
-  <ul>
-    <li>
-      <a id="events" href="#tin">There is no</a>
-      </li>
-     <li>
-      <a id="artists" href="#time">time</a>
-      </li>
-     <li>
-       <a id="about" href="#space">space</a>
-      </li>
-     <li>
-      <a id="newsletter" href="#contact">contact</a>
-      </li>
+<nav class="nav-left">
     <ul>
-    </nav>
+        <li class="li-active" id="tin"><img src="images/nav-1.svg"></li>
+        <li id="time"><img src="images/nav-2.svg"></li>
+        <li id="space"><img src="images/nav-3.svg"></li>
+        <li id="contact"><img src="images/nav-4.svg"></li>
+        </ul>
+</nav>
+
+<nav class="nav-right">
+    <div class="newsletter">
+        <label>Newsletter:</label>
+    <input type="email" placeholder="email address">
+    </div>
+</nav>
 
 <div class="panel-group">
-  <div id="js-panel-1" class="panel">
-    <div class="scroll-container">
-      <p>Arcu sit blandit platea feugiat tempor montes penatibus auctor egestas donec et ut arcu magna. Ad pellentesque dictumst massa taciti. Elementum felis. Arcu <em>iaculis</em> nostra molestie magna aliquet primis. Massa pretium penatibus. Nisl, quam
-        nunc dictum. Nunc inceptos aenean.</p>
+    <div id="js-panel-1" class="panel">
+        <div class="scroll-container">
+            <section class="tin active">
+                <h1>Worum es geht</h1>
+                <p>Es gibt keine Alternative. Am 7. und 8. Juli kommen Trump, Putin, Erdogan, Merkel und Kollegen auf
+                    einen Plausch nach Hamburg, begleitet von großflächigen Absperrungen und soviel Polizei, wie in eine
+                    Stadt hinein passt. Gipfel kippen, aber wohin? Und als ob das eine Möglichkeit wäre. Da geredet
+                    wird, ob wir es wollen oder nicht, laden wir unter einer anderen Prämisse ebenfalls zum Reden ein:
+                    There Is No Time, es gibt keine Zeit. Wir müssen reden, nämlich über die Gegenwart, wenn es eine
+                    Zukunft geben soll. </p>
 
-      <p>Nulla Ridiculus quis nulla nonummy dictumst proin leo nam montes proin. Elementum dictum odio. Fusce vitae. Elit urna velit congue accumsan mollis semper, mus magnis libero bibendum eleifend elementum ridiculus, <strong>class</strong> dis magnis
-        nisi lacus elit augue sapien faucibus condimentum dignissim neque.</p>
+                <p>Während Großdemonstrationen und politische Kundgebungen das Stadtbild bestimmen werden, schaffen wir
+                    auf dem Archipel, einer schwimmenden Plattform, die in einem der Hamburger Kanäle anliegt, eine
+                    Bühne für Livegespräche, eine Sendezenrale, einen Knotenpunkt für diskursiven Austausch.</p>
 
-      <p>Sed praesent <strong>cum</strong> accumsan sit. Dictumst montes curabitur. Vel. Gravida, cras consequat mollis sit vitae pede vel Vehicula porttitor per. Magnis. Etiam nullam imperdiet varius ultrices neque fermentum. Mi. Justo. Quam rhoncus metus
-        congue, rutrum enim elit quis.</p>
+                <p>Weit weg vom Jahrmarkt der Hoffnungslosigkeit brechen wir die Themen des G20 neu an und fragen: was
+                    mag es sein, das sich die politischen Schausteller unter „Zukunftsfähigkeit verbessern“ oder
+                    „Verantwortung übernehmen“ vorstellen, unter „Frauen“ oder „Fluchtursachen bekämpfen“? Es reicht
+                    nicht, Frisuren und Persönlichkeitszüge etwaiger Staatsspitzen einer harten Kritik zu unterziehen.
+                    Hier allein gibt es zwar genug Defizite um die Zeilen etlicher Glossen zu füllen, dennoch gleitet es
+                    sich am Schmierfett der kosmetischen Aufbereitung entspannt an nicht so unwesentlichen Fragen
+                    vorbei. Zum Beispiel: Warum Protektionismus und nationalstaatliche Souveranität rechts und links der
+                    Mitte wieder Herzflattern entfachen, während Weiter-So eher das Echo eines Nirgendwo ist? Wieso,
+                    wenn denn die Arbeit von der Technik verschluckt zu werden droht, die Nachricht nicht mit froherer
+                    Kunde überbracht wird: schließlich hiesse es mehr Zeit für Alle? Gibt es Griechenland noch? Die
+                    Eurozone? Wie lange dauert es noch, bis dieser irreversible Klimawandel endlich von kompetenten
+                    Fachkräften aufgehalten wird? Beginnt Depression erst beim Arztattest gesellschaftlich zu werden
+                    oder schon vorher? Was hat das wiederum mit dem G20 zu tun?</p>
 
-      <p>Sit elementum suscipit elit <em>cras</em> platea senectus. Litora placerat sit interdum scelerisque nibh class rutrum et parturient gravida. Nullam convallis habitasse nibh. Dictumst dictum risus congue at dolor. Congue sodales rutrum.</p>
+            </section>
 
-      <p>Neque. Sem class fusce. Natoque. Curabitur tempor <em>nam</em> magnis blandit. Pharetra. Suspendisse dis pharetra euismod auctor mattis, mattis quis nisl habitant <strong>pharetra</strong> ipsum mattis nullam iaculis. Potenti. Montes conubia aenean
-        ullamcorper, ultrices id laoreet. Cum pede ante congue id pharetra phasellus nisl. Mattis suspendisse ipsum nulla luctus tempus penatibus porttitor.</p>
+
+            <section class="time">
+                <h1>Panel 1 - Nahrung</h1>
+                <h1>07.08.</h1>
+                <i>16.00</i>
+
+
+
+                <h1>07.08.</h1>
+                <i>16.00</i>
+
+
+
+                <h1>07.08.</h1>
+                <i>16.00</i>
+
+
+
+                <h1>07.08.</h1>
+                <i>16.00</i>
+
+
+                <h1>07.08.</h1>
+                <i>16.00</i>
+
+
+                <h1>Panel 2 - Finanzrechte weiter entwickeln</h1>
+                <h1>07.08.</h1>
+                <i>16.00</i>
+
+
+                <h1>07.08.</h1>
+                <i>16.00</i>
+
+
+
+                <h1>07.08.</h1>
+                <i>16.00</i>
+
+
+
+                <h1>07.08.</h1>
+                <i>16.00</i>
+            </section>
+
+
+            <section class="space">
+                <div id='map'></div>
+            </section>
+
+
+        <section class="contact">
+            <h1>Contact</h1>
+            <p>
+                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+            </p>
+        </section>
+        </div>
+
+        <div id="js-handle-1" class="drag-handle-e ui-resizable-e ui-resizable-handle"></div>
     </div>
-    <div id="js-handle-1" class="drag-handle-e ui-resizable-e ui-resizable-handle"></div>
-  </div>
-  <div id="js-panel-2" class="panel">
-    <div class="scroll-container">
-  
-      <div class="responsive-video">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/z1d1s56d5u8" frameborder="0" allowfullscreen></iframe>
-</div>
+    <div id="js-panel-2" class="panel">
+        <div class="scroll-container">
 
-      <p><em>Volutpat</em> ornare ultrices dignissim vulputate cras habitant justo cubilia. Diam lacinia nec sit conubia. Faucibus <em>magna</em> <strong>elit</strong> hymenaeos dictumst inceptos venenatis diam. Dis. Ipsum vivamus facilisis aliquet vestibulum.
-        Parturient penatibus pretium. Mattis.</p>
+            <div class="responsive-video">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/z1d1s56d5u8" frameborder="0"
+                        allowfullscreen></iframe>
+            </div>
 
-      <p>Erat orci potenti hendrerit. Mattis posuere convallis consequat massa. Posuere arcu quam praesent mollis sollicitudin integer. Augue sit maecenas tempor phasellus turpis consequat, habitant sociosqu parturient tristique hendrerit potenti aenean
-        neque libero pede. Faucibus aenean iaculis nibh id duis sociis tortor hymenaeos tempus montes nam urna neque nibh. Scelerisque.</p>
+            <p><em>Volutpat</em> ornare ultrices dignissim vulputate cras habitant justo cubilia. Diam lacinia nec sit
+                conubia. Faucibus <em>magna</em> <strong>elit</strong> hymenaeos dictumst inceptos venenatis diam. Dis.
+                Ipsum vivamus facilisis aliquet vestibulum.
+                Parturient penatibus pretium. Mattis.</p>
 
-      <p>Platea maecenas habitant consequat. Nisl nonummy est est elit erat habitant class tempor laoreet ad. Nullam hac vehicula, pellentesque ornare leo <em>taciti</em> quis <strong>elementum</strong> rhoncus venenatis mus euismod conubia Tellus ultricies
-        porta At amet tempus risus pharetra metus <em>dis</em> erat.</p>
+            <p>Erat orci potenti hendrerit. Mattis posuere convallis consequat massa. Posuere arcu quam praesent mollis
+                sollicitudin integer. Augue sit maecenas tempor phasellus turpis consequat, habitant sociosqu parturient
+                tristique hendrerit potenti aenean
+                neque libero pede. Faucibus aenean iaculis nibh id duis sociis tortor hymenaeos tempus montes nam urna
+                neque nibh. Scelerisque.</p>
 
-      <p>Risus nulla elementum hymenaeos aliquam sapien venenatis quis pretium suspendisse natoque tortor feugiat. Velit. Tempus scelerisque lacus tellus congue congue <em>nibh</em> iaculis rhoncus habitant.</p>
+            <p>Platea maecenas habitant consequat. Nisl nonummy est est elit erat habitant class tempor laoreet ad.
+                Nullam hac vehicula, pellentesque ornare leo <em>taciti</em> quis <strong>elementum</strong> rhoncus
+                venenatis mus euismod conubia Tellus ultricies
+                porta At amet tempus risus pharetra metus <em>dis</em> erat.</p>
+
+            <p>Risus nulla elementum hymenaeos aliquam sapien venenatis quis pretium suspendisse natoque tortor feugiat.
+                Velit. Tempus scelerisque lacus tellus congue congue <em>nibh</em> iaculis rhoncus habitant.</p>
+        </div>
     </div>
-  </div>
 
-  
+
 </div>
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.0/jquery-ui.min.js'></script>
-
-    <script src="js/index.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyA5yY9wuloo24yqGvTJKm0GsTKt0a_6OkI"></script>
+<script src="js/index.js"></script>
 
 </body>
 </html>

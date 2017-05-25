@@ -1,188 +1,157 @@
-$("#js-panel-1").resizable({
-  handles: {
-    "e": "#js-handle-1"
-  },
-   resize: function(event, ui) {
-       var navwidth = $('nav').width();
-  var leftcontainerwidth = $('#js-panel-1').width();
-   $('nav').css('width', leftcontainerwidth + "px");
-  }
+var place = new google.maps.LatLng(53.543457, 10.042324);
+var parliament = new google.maps.LatLng(53.543457, 10.042324);
+var marker;
+var map;
+var grayStyles = [
+    {
+        featureType: "all",
+        stylers: [
+            {saturation: -90},
+            {lightness: 50}
+        ]
+    }
+];
+
+function initialize() {
+    var mapOptions = {
+        zoom: 15,
+        clickable: false,
+        streetViewControl: false,
+        mapTypeControl: false,
+        center: place
+    };
+
+    map = new google.maps.Map(document.getElementById('map'),
+        mapOptions);
+
+    marker = new google.maps.Marker({
+        map: map,
+        position: parliament,
+        url: "https://goo.gl/maps/NotWcuX74Qo"
+
+    });
+
+    var contentString = '<div id="content">' +
+        '<div id="siteNotice">' +
+        '</div>' +
+        '<img src="http://olivertotzke.de/spotten/wp-content/uploads/2014/12/8.jpg"' +
+        '<div id="bodyContent">' +
+        '<div>Vorbeikommen? Das geht. Wir liegen an der grünen Brücke etc.</div>' +
+        '</div>' +
+        '</div>';
+
+    var infowindow = new google.maps.InfoWindow({
+        content: contentString
+    });
+
+
+    google.maps.event.addListener(marker, 'click', function () {
+        window.location.href = this.url;
+    });
+    infowindow.open(map, marker);
+}
+
+
+$(document).ready(function () {
+
+    $('#space').one('click', function () {
+        initialize();
+    });
 });
 
-$( document ).ready(function() {
-  var windowheight = $(window).height();
+
+$("#js-panel-1").resizable({
+    handles: {
+        "e": "#js-handle-1"
+    },
+    resize: function (event, ui) {
+        var leftcontainerwidth = $('#js-panel-1').width();
+        var rightcontainerwidth = $('#js-panel-2').width();
+        $('.nav-left').css('width', leftcontainerwidth + "px");
+        $('.nav-right').css('width', rightcontainerwidth + "px");
+        $(window).trigger('resize');
+    }
+});
+
+$(document).ready(function () {
+    var leftcontainerwidth = $('#js-panel-1').width();
+    var rightcontainerwidth = $('#js-panel-2').width();
+    var windowheight = $(window).height();
     var heightleft = $('.panel-group').height();
     var navheight = $('nav').height();
-  var navwidth = $('nav').width();
-  var leftcontainerwidth = $('#js-panel-1').width();
-  
+    $('.nav-left').css('width', leftcontainerwidth + "px");
+    $('.nav-right').css('width', rightcontainerwidth + "px");
     $('.panel-group').css('height', windowheight - navheight + "px");
-   $('.panel-group').css('margin-top', navheight + "px");
-  
-   $('.nav-right').css('height', navheight + "px");
+    $('.panel-group').css('margin-top', navheight + "px");
 
-  
-   $('nav').css('width', leftcontainerwidth + "px");
-  
+    $('.nav-right').css('height', navheight + "px");
+
+
 });
 
-$(window).on('resize', function(){
-  var windowheight = $(window).height();
+$(window).on('resize', function () {
+    var windowheight = $(window).height();
+    var leftcontainerwidth = $('#js-panel-1').width();
+    var rightcontainerwidth = $('#js-panel-2').width();
     var heightleft = $('.left').height();
     var navheight = $('nav').height();
-  
-      $('.panel-group').css('height', windowheight - navheight + "px");
-   $('.panel-group').css('margin-top', navheight + "px");
-  
-   $('.nav-right').css('height', navheight + "px");
-   $('nav').css('height', navheight + "px");
+    $('.nav-left').css('width', leftcontainerwidth + "px");
+    $('.nav-right').css('width', rightcontainerwidth + "px");
+    $('.panel-group').css('height', windowheight - navheight + "px");
+    $('.panel-group').css('margin-top', navheight + "px");
+
+    $('.nav-right').css('height', navheight + "px");
+    $('nav').css('height', navheight + "px");
 });
 
 
+$(document).ready(function () {
 
 
-$(document).ready(function() {
-  
-  
-  
-    $('#events').click(function() {
-	    $('.logo').addClass('logo-events');
-	    $('.logo').removeClass('logo-artists');
-	    $('.logo').removeClass('logo-about');
-        $('.events').addClass('active');
-      $('.artists').removeClass('active');
-      $('.about').removeClass('active');
+    $('#tin').click(function () {
+        $('.tin').addClass('active');
+        $('.time').removeClass('active');
+        $('.space').removeClass('active');
+        $('.contact').removeClass('active');
+        $('#tin').addClass('li-active');
+        $('#time').removeClass('li-active');
+        $('#space').removeClass('li-active');
+        $('#contact').removeClass('li-active');
     });
-  
-   $('#artists').click(function() {
-	   $('.logo').addClass('logo-artists');
-	    $('.logo').removeClass('logo-events');
-	    $('.logo').removeClass('logo-about');
-        $('.artists').addClass('active');
-      $('.events').removeClass('active');
-      $('.about').removeClass('active');
+
+    $('#time').click(function () {
+        $('.time').addClass('active');
+        $('.tin').removeClass('active');
+        $('.space').removeClass('active');
+        $('.contact').removeClass('active');
+        $('#time').addClass('li-active');
+        $('#tin').removeClass('li-active');
+        $('#space').removeClass('li-active');
+        $('#contact').removeClass('li-active');
     });
-  
-   $('#about').click(function() {
-	   $('.logo').addClass('logo-about');
-	   $('.logo').removeClass('logo-events');
-	    $('.logo').removeClass('logo-artists');
-        $('.about').addClass('active');
-      $('.events').removeClass('active');
-      $('.artists').removeClass('active');
+
+    $('#space').click(function () {
+        $('.space').addClass('active');
+        $('.tin').removeClass('active');
+        $('.time').removeClass('active');
+        $('.contact').removeClass('active');
+        $('#space').addClass('li-active');
+        $('#tin').removeClass('li-active');
+        $('#time').removeClass('li-active');
+        $('#contact').removeClass('li-active');
     });
-  
+
+    $('#contact').click(function () {
+        $('.contact').addClass('active');
+        $('.tin').removeClass('active');
+        $('.time').removeClass('active');
+        $('.space').removeClass('active');
+        $('#contact').addClass('li-active');
+        $('#tin').removeClass('li-active');
+        $('#time').removeClass('li-active');
+        $('#space').removeClass('li-active');
+    });
+
 });
 
 
-
-(function(w, d) {
-  var raf = w.requestAnimationFrame || w.setImmediate || function(c) { return setTimeout(c, 0); };
-
-  function initEl(el) {
-    if (el.hasOwnProperty('data-simple-scrollbar')) return;
-    Object.defineProperty(el, 'data-simple-scrollbar', new SimpleScrollbar(el));
-  }
-
-  // Mouse drag handler
-  function dragDealer(el, context) {
-    var lastPageY;
-
-    el.addEventListener('mousedown', function(e) {
-      lastPageY = e.pageY;
-      el.classList.add('ss-grabbed');
-      d.body.classList.add('ss-grabbed');
-
-      d.addEventListener('mousemove', drag);
-      d.addEventListener('mouseup', stop);
-
-      return false;
-    });
-
-    function drag(e) {
-      var delta = e.pageY - lastPageY;
-      lastPageY = e.pageY;
-
-      raf(function() {
-        context.el.scrollTop += delta / context.scrollRatio;
-      });
-    }
-
-    function stop() {
-      el.classList.remove('ss-grabbed');
-      d.body.classList.remove('ss-grabbed');
-      d.removeEventListener('mousemove', drag);
-      d.removeEventListener('mouseup', stop);
-    }
-  }
-
-  // Constructor
-  function ss(el) {
-    this.target = el;
-    
-    this.bar = '<div class="ss-scroll">';
-
-    this.wrapper = d.createElement('div');
-    this.wrapper.setAttribute('class', 'ss-wrapper');
-
-    this.el = d.createElement('div');
-    this.el.setAttribute('class', 'ss-content');
-
-    this.wrapper.appendChild(this.el);
-
-    while (this.target.firstChild) {
-      this.el.appendChild(this.target.firstChild);
-    }
-    this.target.appendChild(this.wrapper);
-
-    this.target.insertAdjacentHTML('beforeend', this.bar);
-    this.bar = this.target.lastChild;
-
-    dragDealer(this.bar, this);
-    this.moveBar();
-
-    this.el.addEventListener('scroll', this.moveBar.bind(this));
-    this.el.addEventListener('mouseenter', this.moveBar.bind(this));
-
-    this.target.classList.add('ss-container'); 
-      
-    var css = window.getComputedStyle(el);
-  	if (css['height'] === '0px' && css['max-height'] !== '0px') {
-    	el.style.height = css['max-height'];
-    }
-  }
-
-  ss.prototype = {
-    moveBar: function(e) {
-      var totalHeight = this.el.scrollHeight,
-          ownHeight = this.el.clientHeight,
-          _this = this;
-
-      this.scrollRatio = ownHeight / totalHeight;
-
-      raf(function() {
-        // Hide scrollbar if no scrolling is possible
-        if(_this.scrollRatio >= 1) {
-          _this.bar.classList.add('ss-hidden')
-        } else {
-          _this.bar.classList.remove('ss-hidden')
-          _this.bar.style.cssText = 'height:' + (_this.scrollRatio) * 100 + '%; top:' + (_this.el.scrollTop / totalHeight ) * 100 + '%;right:-' + (_this.target.clientWidth - _this.bar.clientWidth) + 'px;';
-        }
-      });
-    }
-  }
-
-  function initAll() {
-    var nodes = d.querySelectorAll('*[ss-container]');
-
-    for (var i = 0; i < nodes.length; i++) {
-      initEl(nodes[i]);
-    }
-  }
-
-  d.addEventListener('DOMContentLoaded', initAll);
-  ss.initEl = initEl;
-  ss.initAll = initAll;
-
-  w.SimpleScrollbar = ss;
-})(window, document);
