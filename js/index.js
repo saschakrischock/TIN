@@ -18,8 +18,15 @@ function initialize() {
         clickable: false,
         streetViewControl: false,
         mapTypeControl: false,
-        center: place
+        center: {
+            lat: 53.543457,
+            lng: 10.042324
+        },
+        styles: [{"featureType":"all","elementType":"geometry.fill","stylers":[{"weight":"2.00"}]},{"featureType":"all","elementType":"geometry.stroke","stylers":[{"color":"#9c9c9c"}]},{"featureType":"all","elementType":"labels.text","stylers":[{"visibility":"on"}]},{"featureType":"landscape","elementType":"all","stylers":[{"color":"#f2f2f2"}]},{"featureType":"landscape","elementType":"geometry.fill","stylers":[{"color":"#ffffff"}]},{"featureType":"landscape.man_made","elementType":"geometry.fill","stylers":[{"color":"#ffffff"}]},{"featureType":"poi","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"all","stylers":[{"saturation":-100},{"lightness":45}]},{"featureType":"road","elementType":"geometry.fill","stylers":[{"color":"#eeeeee"}]},{"featureType":"road","elementType":"labels.text.fill","stylers":[{"color":"#7b7b7b"}]},{"featureType":"road","elementType":"labels.text.stroke","stylers":[{"color":"#ffffff"}]},{"featureType":"road.highway","elementType":"all","stylers":[{"visibility":"simplified"}]},{"featureType":"road.arterial","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#46bcec"},{"visibility":"on"}]},{"featureType":"water","elementType":"geometry.fill","stylers":[{"color":"#c8d7d4"}]},{"featureType":"water","elementType":"labels.text.fill","stylers":[{"color":"#070707"}]},{"featureType":"water","elementType":"labels.text.stroke","stylers":[{"color":"#ffffff"}]}]
     };
+
+
+
 
     map = new google.maps.Map(document.getElementById('map'),
         mapOptions);
@@ -31,13 +38,18 @@ function initialize() {
 
     });
 
+
+
+
     var contentString = '<div id="content">' +
+        '<a style="color:#000;text-decoration: none" href="https://goo.gl/maps/zAthbZkR5ks">' +
         '<div id="siteNotice">' +
         '</div>' +
-        '<img src="http://olivertotzke.de/spotten/wp-content/uploads/2014/12/8.jpg"' +
-        '<div id="bodyContent">' +
-        '<div>Vorbeikommen? Das geht. Wir liegen an der grünen Brücke etc.</div>' +
+        '<img src="http://galerie-genscher.com/wp-content/uploads/2015/10/Yoga2-1024x580.png"' +
+        '<a id="bodyContent">' +
+        '<div class="google-maps-text">Vorbeikommen? Das geht.<br>Wir liegen an der grünen Brücke 3, 20539 Hamburg</div>' +
         '</div>' +
+        '</a>' +
         '</div>';
 
     var infowindow = new google.maps.InfoWindow({
@@ -70,6 +82,29 @@ $("#js-panel-1").resizable({
         $('.nav-left').css('width', leftcontainerwidth + "px");
         $('.nav-right').css('width', rightcontainerwidth + "px");
         $(window).trigger('resize');
+        $("iframe").addClass("no-cursor");
+        $(".drag-handle-e").addClass('while-dragged');
+        $(".drag-indicator").addClass('while-dragged');
+
+        if (rightcontainerwidth > leftcontainerwidth) {
+            $("#js-panel-1 p").addClass("one-column");
+        }
+        else {
+            $("#js-panel-1 p").removeClass("one-column");
+        }
+
+        if (rightcontainerwidth/2 > leftcontainerwidth) {
+            $(".nav-left ul li").addClass("small")
+        }
+        else {
+            $(".nav-left ul li").removeClass("small");
+        }
+
+    },
+    stop: function(event, ui) {
+        $("iframe").removeClass("no-cursor");
+        $(".drag-handle-e").removeClass('while-dragged');
+        $(".drag-indicator").removeClass('while-dragged');
     }
 });
 
